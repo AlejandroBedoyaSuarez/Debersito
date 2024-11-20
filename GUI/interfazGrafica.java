@@ -1,19 +1,16 @@
 package GUI;
+
+import Procesos.*;
 import javax.swing.*;
-import Procesos.Cliente;
-import Procesos.Compra;
-import Procesos.Videojuegos;
-import Procesos.videojuegoDigital;
-import Procesos.videojuegoFisico;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
 public class interfazGrafica extends JFrame {
-    protected ArrayList<Videojuegos> inventario = new ArrayList<>();
-    protected Cliente cliente;
-    protected JTextArea displayArea;
-    protected JTextField inputField;
+    private ArrayList<Videojuegos> inventario = new ArrayList<>();
+    private Cliente cliente;
+    private JTextArea displayArea;
+    private JTextField inputField;
 
     @SuppressWarnings("unused")
     public interfazGrafica() {
@@ -58,7 +55,7 @@ public class interfazGrafica extends JFrame {
         salirBtn.addActionListener(e -> System.exit(0));
     }
 
-    protected void registrarVideojuego() {
+    private void registrarVideojuego() {
         // Solicitar datos del videojuego
         String[] opciones = {"Físico", "Digital"};
         int tipo = JOptionPane.showOptionDialog(this, "Selecciona el tipo de videojuego:", 
@@ -82,7 +79,7 @@ public class interfazGrafica extends JFrame {
         displayArea.append("Videojuego registrado: " + titulo + "\n");
     }
 
-    protected void registrarCliente() {
+    private void registrarCliente() {
         // Solicitar datos del cliente
         String nombre = JOptionPane.showInputDialog(this, "Nombre del cliente:");
         String correo = JOptionPane.showInputDialog(this, "Correo del cliente:");
@@ -92,7 +89,7 @@ public class interfazGrafica extends JFrame {
         displayArea.append("Cliente registrado: " + cliente.detalles() + "\n");
     }
 
-    protected void realizarCompra() {
+    private void realizarCompra() {
         if (cliente == null) {
             JOptionPane.showMessageDialog(this, "Primero debes registrar un cliente.");
             return;
@@ -139,4 +136,7 @@ public class interfazGrafica extends JFrame {
 
         JOptionPane.showMessageDialog(this, recibo.toString(), "Recibo", JOptionPane.INFORMATION_MESSAGE);
     }
+
+   
+    
 }
