@@ -10,11 +10,10 @@ import java.awt.event.*;
 import java.util.ArrayList;
 
 public class interfazGrafica extends JFrame {
-    private ArrayList<Videojuegos> inventario = new ArrayList<>();
-    private Cliente cliente;
-
-    private JTextArea displayArea;
-    private JTextField inputField;
+    protected ArrayList<Videojuegos> inventario = new ArrayList<>();
+    protected Cliente cliente;
+    protected JTextArea displayArea;
+    protected JTextField inputField;
 
     @SuppressWarnings("unused")
     public interfazGrafica() {
