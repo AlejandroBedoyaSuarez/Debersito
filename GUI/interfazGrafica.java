@@ -1,7 +1,13 @@
 package GUI;
 
-import Procesos.*;
 import javax.swing.*;
+
+import Procesos.Cliente;
+import Procesos.Compra;
+import Procesos.Videojuegos;
+import Procesos.videojuegoDigital;
+import Procesos.videojuegoFisico;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -13,6 +19,7 @@ public class interfazGrafica extends JFrame {
     private JTextArea displayArea;
     private JTextField inputField;
 
+    @SuppressWarnings("unused")
     public interfazGrafica() {
         // Configuración de la ventana principal
         setTitle("Tienda de Videojuegos CarlitosLOL");
@@ -135,5 +142,13 @@ public class interfazGrafica extends JFrame {
         recibo.append("Total a pagar: $").append(total).append("\n");
 
         JOptionPane.showMessageDialog(this, recibo.toString(), "Recibo", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    // Método principal para ejecutar la GUI
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            interfazGrafica frame = new interfazGrafica();
+            frame.setVisible(true);
+        });
     }
 }
