@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Compra {
     protected Cliente cliente; //objeto de la clase Cliente, representa a la persona que está realizando la compra
-    protected ArrayList<Videojuegos> carrito; //sirve para hacer la lista
+    public ArrayList<Videojuegos> carrito; //sirve para hacer la lista
 
     //Hacemos el constructor
     public Compra(Cliente cliente) {
